@@ -26,13 +26,13 @@
     <p>Switch# configure terminal <br> Switch(config)# hostname Sw-Floor-1 <br> Sw-Floor-1(config)#
     </p>
 <h2>Configure Passwords</h2>
-    <p>Sw-Floor-1# configure terminal <br> Sw-Floor-1(config)# line console 0 <br>Sw-Floor-1(config-line)# password cisco <br>Sw-Floor-1(config-line)# login<br>Sw-Floor-1(config-line)#end <br> Sw-Floor-1#
+    <p>Sw-Floor-1# configure terminal <br> Sw-Floor-1(config)# line console 0 <br>Sw-Floor-1(config-line)# password {password} <br>Sw-Floor-1(config-line)# login<br>Sw-Floor-1(config-line)#end <br> Sw-Floor-1#
     </p>
 <h4>To secure Privileged EXEC access</h4>
-    <p> - Sw-Floor-1# configure terminal <br> - Sw-Floor-1(config)# enable secret class <br> - Sw-Floor-1(config)# exit <br> - Sw-Floor-1#
+    <p> - Sw-Floor-1# configure terminal <br> - Sw-Floor-1(config)# enable secret {password} <br> - Sw-Floor-1(config)# exit <br> - Sw-Floor-1#
     </p>
 <h4>Virtual terminal (VTY) Lines</h4>
-    <p>Sw-Floor-1# configure terminal <br> Sw-Floor-1 (config)# line vty 0 15 <br> Sw-Floor-1(config-line)# password cisco <br> 
+    <p>Sw-Floor-1# configure terminal <br> Sw-Floor-1 (config)# line vty 0 15 <br> Sw-Floor-1(config-line)# password {password} <br> 
     Sw-Floor-1(config-line)# login <br> Sw-Floor-1(config-line)# end <br> Sw-Floor-1#
     </p>
 <h4>Encryption</h4>
@@ -43,10 +43,12 @@
     </p>
 <h2>Configure IP Addressing</h2>
     <p>View Network connections IpV4 <br> - Use following IP address </p>
-    <p>SVI Configuration <br> Sw-Floor-1# configure terminal <br> Sw-Floor-1(config)# interface vlan 1 <br> Sw-Floor-1(config-if)# ip address 192.168.1.20 255.255.255.0 <br>Sw-Floor-1(config-if)# no shutdown <br> Sw-Floor-1(config-if)# exit <br> Sw-Floor-1(config)# ip default-gateway 192.168.1.1
+    <p>SVI Configuration <br> Sw-Floor-1# configure terminal <br> Sw-Floor-1(config)# interface vlan 1 <br> Sw-Floor-1(config-if)# ip address 192.168.1.20 255.255.255.0 <br>Sw-Floor-1(config-if)# no shutdown <br> Sw-Floor-1(config-if)# exit <br> Sw-Floor-1(config)# ip default-gateway 192.168.1.1 - not needed
     </p>
 <h4>Verify Connectivity in cmd</h4>
     <p> - >ping 192.168.1.2 <br> - >ping Sw-Floor-1 <br> Ping both switches and IP's
     </p>
-
+<h4>Verify the IP address config on S1+S2</h4>
+    <p>- show ipinterface brief</p>
+<h3>SAVE CONFIGURATIONS: COPY RUN START
     
