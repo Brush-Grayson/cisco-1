@@ -51,4 +51,14 @@
 <h4>Verify the IP address config on S1+S2</h4>
     <p>- show ipinterface brief</p>
 <h3>SAVE CONFIGURATIONS: COPY RUN START
+
+<h2>Protocols and Models</h2>
+    <h3>Osi Model</h3>
+        <p>7. Application <br>6. Presentation <br> 5. Session <br>4. Transport <br>3. Network <br>2. Data Link <br>1. Physical
+        </p>
+     <h3>TCP/IP Model</h3>
+        <p>4. Application <br>3. Transport <br>2. Internet <br>1. Network Access
+        </p>
+        <img src="./images/pdu.png" alt="pdu" />
+        
     
