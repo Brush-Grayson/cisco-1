@@ -9,7 +9,7 @@
     Allows Access to all commands and features. <br> - Switch# <br> - Router#
     </p>
 <h2>Navigation</h2>
-    <p>- Switch>en to get to Priviliege mode <br> - Switch#disable to get to user mode 
+    <p>- Switch>en to get to Priviliege mode <br> - Switch#disable to get to user mode <br> - Router(config)# no ip domain-lookup -> (end, copy run start)
     </p>
 <h4>Line subconfiguration</h4> 
     <p>Switch(config)# line console 0 <br> Switch(config-line)# exit <br> Switch(config)#
@@ -60,5 +60,19 @@
         <p>4. Application <br>3. Transport <br>2. Internet <br>1. Network Access
         </p>
         <img src="./images/pdu.png" alt="pdu" />
+<h2>Switch fundamentals</h2>    
+    <p>
+        1. Source MAC: Check to see if it is on the Mac Table <br> 2. Dest Mac: Check to see if on the Mac table <br> 3. Broadcast (FF): Always gets forwarded to all ports <br>
+    </p>
+    <h3>Forwarding</h3>
+        <p>
+            1. Unicast sent to specific port only <br>
+            - Both Source and Destination MAC are in the MAC table <br>
+            2. Unicast flooded to all ports <br>
+            - Source MAC is in the table but the destination MAC is not <br>
+            - Or if both are not in the table <br>
+            3. Dropped at switch if the source MAC and destination MAC are the same (Fa9)
+        </p>
+
         
     
