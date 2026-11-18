@@ -73,6 +73,41 @@
             - Or if both are not in the table <br>
             3. Dropped at switch if the source MAC and destination MAC are the same (Fa9)
         </p>
+     <h2>Basic Router Config Steps</h2>
+     <p>
+        Router(config)# hostname "hostname" <br>
+        <h3>Secure priv EXEC mode</h3>
+        Router(config)# enable secret "password" <br>
+        <h3>Securing user EXEC mode</h3>
+        Router(config)# line console 0 <br>
+        Router(config-line)# password "password" <br>
+        Router(config-line)# login
+        <h3>Secure remote Telnet/SSH access</h3>
+        Router(config-line)# line vty 0 4 <br>
+        Router(config-line)#password "password" <br>
+        Router(configure-line)#login <br>
+        Router(config-line)# transport input ssh Telnet
+        <h3>Secure all passwords</h3>
+        Router(config-line)#exit <br>
+        Router(config)# service password-encryption
+        <h3>Provide legal notification</h3>
+        Router(config)#banner motd "message"
+        <h3> Save the configuration</h3>
+        Router(config)# end <br>
+        Router# copy run start
+        <h2>Configure Router interfaces</h2>
+        Router(config)# interface *type-and-number* <br>
+        Router(config-if)# description *description-text* <br>
+        Router(config-if)# ip address *ipv4-address subnet-mask* <br>
+        Router(config-if)# ipv6 address *ipv6-address/prefix-length* <br>
+        Router(config-if)# no shutdown
+        <h3>Verify Interface Configuration</h3>
+        R1# show ip interface brief <br>
+        R1# show ipv6 interface brief
+        <h3>Default Gateway</h3>
+        S1# config t <br>
+        S1(config)# ip default-gateway *192.168.10.1*
+     </p>   
 
         
     
